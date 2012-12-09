@@ -1,7 +1,16 @@
-{% extends "base.html" %}
+{% extends "asn/base.html" %}
+{% load url from future %}
 
 {% block content %}
   <h1>The Antisocial Network is Awesome</h1>
 
-  <h2>Your username is {{ request.user.}}
+  {% if not request.user.is_authenticated %}
+    <h2>Go on!</h2>
+    <p>
+      <a href="{% url 'antisocial_ego' %}">Give it a go.</a>
+    </p>
+  {% else %}
+    <h2>Your username is {{ request.user.username }}</h2>
+  {% endif %}
+
 {% endblock content %}

@@ -1,0 +1,13 @@
+{% extends "asn/base.html" %}
+{% load url from future %}
+
+{% block content %}
+<h1>Hi, {{ request.user.username }}</h1>
+<p>
+  You have no friends.
+</p>
+<p>
+  <a href="{% url 'asn_home' %}">Fine. I'll go home then.</a>
+</p>
+
+{% endblock content %}
