@@ -1,0 +1,12 @@
+{% extends "asn/base.html" %}
+{% load url from future %}
+
+{% block content %}
+  <h1>Done.</h1>
+  <p>
+    You still have no friends, but at least you've got a name now.
+  </p>
+  <p>
+    <a href="{% url 'antisocial_ego' %}">Cogito ergo sum.</a>
+  </p>
+{% endblock content %}

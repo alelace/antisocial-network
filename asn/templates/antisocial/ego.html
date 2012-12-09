@@ -1,11 +1,17 @@
 {% extends "asn/base.html" %}
 {% load url from future %}
+{% load lazysignup_tags %}
 
 {% block content %}
 <h1>Hi, {{ request.user.username }}</h1>
 <p>
   You have no friends.
 </p>
+
+{% if request.user|is_lazy_user %}
+  <p>Hey, lazy. <a href="{% url 'lazysignup_convert' %}">Go set yourself up.</a></p>
+{% endif %}
+
 <p>
   <a href="{% url 'asn_home' %}">Fine. I'll go home then.</a>
 </p>
